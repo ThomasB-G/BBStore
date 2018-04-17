@@ -17,5 +17,5 @@ public class App {
         System.out.println("THIS SHALL BE OUR STORE!!!!! ROOOOAAAAARRR");
         System.out.println("patrick is here.");
     }
-    
+    //totally patrick totalling adding stuff
 }
