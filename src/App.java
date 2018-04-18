@@ -14,8 +14,7 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("THIS SHALL BE OUR STORE!!!!! ROOOOAAAAARRR");
-        System.out.println("patrick is here.");
+        Controller cntl = new Controller();
     }
     //totally patrick totalling adding stuff
 }
