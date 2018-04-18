@@ -30,6 +30,6 @@ public class Stock {
     
     public void printList()
     {
-        stock.forEach((a) -> { System.out.print(a.toString()); });
+        stock.forEach((a) -> System.out.print(a.toString()));
     }
 }
