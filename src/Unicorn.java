@@ -59,4 +59,10 @@ public class Unicorn implements Animal{
     public int getID() {
         return id;
     }
+    
+    @Override
+    public String toString()
+    {
+        return "The Unicorn " + this.name + " costs " + this.cost + ", is " + this.age + " years old, weighs " + this.weight + " pounds, and is " + this.height + " meters tall. \n";
+    }
 }

@@ -21,4 +21,7 @@ public interface Animal
     public double getHeight();
     
     public int getID();
+    
+    @Override
+    public String toString();
 }
