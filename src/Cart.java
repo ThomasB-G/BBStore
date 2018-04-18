@@ -28,10 +28,8 @@ public class Cart {
         cart.remove(a);
     }
     
-    public double totalCost()
+    public Optional<Double> totalCost()
     {
-        double cost = 0.0;
-        cost = cart.stream().map((a) -> a.getCost()).reduce(cost, (accumulator, _item) -> accumulator + _item);
-        return cost;
+        return cart.stream().map((a) -> a.getCost()).reduce( (accumulator, _item) -> accumulator + _item);
     }
 }
