@@ -28,8 +28,9 @@ public class Cart {
         cart.remove(a);
     }
     
-    public Optional<Double> totalCost()
+    public double totalCost()
     {
-        return cart.stream().map((a) -> a.getCost()).reduce( (accumulator, _item) -> accumulator + _item);
+        // or cart.stream().map(Animal::getCost()).sum(); <-- this might work too still working on it
+        return cart.stream().map((a) -> a.getCost()).reduce(0.0, (accumulator, _item) -> accumulator + _item);
     }
 }
