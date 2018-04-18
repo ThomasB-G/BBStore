@@ -31,6 +31,6 @@ public class Cart {
     public double totalCost()
     {
         // or cart.stream().map(Animal::getCost()).sum(); <-- this might work too still working on it
-        return cart.stream().map((a) -> a.getCost()).reduce(0.0, (accumulator, _item) -> accumulator + _item);
+        return cart.stream().map((a) -> a.getCost()).reduce(0.0, (a, b) -> a + b);
     }
 }
