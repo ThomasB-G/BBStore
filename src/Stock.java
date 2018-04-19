@@ -48,4 +48,9 @@ public class Stock {
     {
         return stock.stream().filter(b -> b.getName().equalsIgnoreCase(a)).findFirst().get();
     }
+    
+    public Animal getAnimal(Animal a)
+    {
+        return stock.stream().filter(b -> b.equals(a)).findFirst().get();
+    }
 }
