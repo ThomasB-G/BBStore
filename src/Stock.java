@@ -43,4 +43,9 @@ public class Stock {
     {
         return stock.stream().anyMatch((Predicate<? super Animal>) a);
     }
+    
+    public Animal getAnimal(String a)
+    {
+        return stock.stream().filter(b -> b.getName().equalsIgnoreCase(a)).findFirst().get();
+    }
 }

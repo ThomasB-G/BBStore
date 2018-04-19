@@ -1,3 +1,6 @@
+
+import java.util.Optional;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -65,5 +68,10 @@ public class Bird implements Animal{
     public String toString()
     {
         return "The Bird " + this.name + " costs " + this.cost + ", is " + this.age + " years old, weighs " + this.weight + " pounds, and is " + this.height + " meters tall. \n";
+    }
+
+    @Override
+    public Animal valueOf(Optional<Animal> a) {
+        return a.get();
     }
 }
