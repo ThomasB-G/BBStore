@@ -9,6 +9,7 @@
  * @author russell
  */
 import java.util.*;
+import java.util.function.Predicate;
 
 public class Stock {
     private LinkedList<Animal> stock;
@@ -36,5 +37,10 @@ public class Stock {
     public LinkedList<Animal> returnListAsArray()
     {
         return stock;
+    }
+    
+    public boolean animalExists(Animal a)
+    {
+        return stock.stream().anyMatch((Predicate<? super Animal>) a);
     }
 }
