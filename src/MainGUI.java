@@ -6,7 +6,7 @@
 
 /**
  *
- * @author russell
+ * @author Nick Bradstreet
  */
 public class MainGUI {
     
