@@ -32,4 +32,9 @@ public class Stock {
     {
         stock.forEach((a) -> System.out.print(a.toString()));
     }
+    
+    public LinkedList<Animal> returnListAsArray()
+    {
+        return stock;
+    }
 }
