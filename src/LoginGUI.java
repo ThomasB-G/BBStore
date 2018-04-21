@@ -6,6 +6,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class LoginGUI {
 
@@ -20,7 +25,7 @@ public class LoginGUI {
     private JButton cancelButton;
     private JLabel welcomeBanner;
 
-    public void LoginGUI() throws IOException {
+    public void LoginGUI() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         JFrame frame = new JFrame();
         welcomeBanner = new JLabel("Welcome to the Brant-Bargain Pet Store!!");
         welcomeBanner.setForeground(Color.yellow);
@@ -70,7 +75,12 @@ public class LoginGUI {
         frame.setTitle("BBStore: The Ultimate Undergraduate Tuition Payment System.");
         frame.setSize(800, 500);
         frame.setVisible(true);
-
+        
+        //Adding some delightfully happy music to our login page <-- Love, Andrea
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(LoginGUI.class.getResource("creepy-background-daniel_simon.wav"));
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
     }
 
     public class LoginButtonListener implements ActionListener {
