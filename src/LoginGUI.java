@@ -57,11 +57,8 @@ public class LoginGUI {
         JLabel bbLogo = new JLabel();
         bbLogo.setIcon(new ImageIcon("src/B-BLogo.png"));
         bbLogo.setBounds(245, 175, 250, 280);
+        
         panel.add(bbLogo);
-//        BufferedImage bbLogo = ImageIO.read(new File("path-to-file"));
-//        JLabel picLabel = new JLabel(new ImageIcon(bbLogo));
-//        panel.add(picLabel);
-
         panel.add(welcomeBanner);
         panel.add(userNameLabel);
         panel.add(jTxtUsername);
