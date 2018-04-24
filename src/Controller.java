@@ -17,6 +17,7 @@ public class Controller {
         mainGUI = new MainGUI(this);
        // cartGUI = new CartGUI();
         loginGUI = new LoginGUI(this);
+        //loginGui.setVisible(true);
     }
     
     
