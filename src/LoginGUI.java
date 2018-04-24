@@ -46,7 +46,7 @@ public class LoginGUI {
         loginButton = new JButton("Login");
         loginButton.setBackground(Color.darkGray);
         loginButton.setForeground(Color.WHITE);
-        loginButton.addActionListener(new LoginButtonListener());
+        loginButton.addActionListener(event -> this.loginButtonPressed());
         cancelButton = new JButton("Cancel");
         cancelButton.setBackground(Color.darkGray);
         cancelButton.setForeground(Color.WHITE);
@@ -85,19 +85,9 @@ public class LoginGUI {
 //        clip.start();
     }
 
-    public class LoginButtonListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent event) {
-            if (username.equals(jTxtUsername.getText())) {
-                if (password.equals(jTxtPassword.getText())) {
-                    displayMsg = "Welcome to the greatest scam store since the internet. I mean.. Welcome to BB-Petstore!";
-                }
-            } else {
-                displayMsg = "YOU SHALL NOT PASS";
-            }
-
-            JOptionPane.showMessageDialog(null, displayMsg);
-        }
+    public void loginButtonPressed()
+    {
+        this.cntl.loginButtonPressed();
     }
 
     public class CancelButtonListener implements ActionListener {

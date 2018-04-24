@@ -20,5 +20,9 @@ public class Controller {
         //loginGui.setVisible(true);
     }
     
+    public void loginButtonPressed()
+    {
+        
+    }
     
 }
