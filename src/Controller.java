@@ -10,10 +10,13 @@
  */
 public class Controller {
     MainGUI mainGUI;
+    CartGUI cartGUI;
+    LoginGUI loginGUI;
 
     public Controller() {
         mainGUI = new MainGUI(this);
-        mainGUI.setVisible(true);
+       // cartGUI = new CartGUI();
+        loginGUI = new LoginGUI(this);
     }
     
     

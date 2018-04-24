@@ -24,8 +24,10 @@ public class LoginGUI {
     private JButton loginButton;
     private JButton cancelButton;
     private JLabel welcomeBanner;
+    private Controller cntl;
 
-    public void LoginGUI() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public LoginGUI(Controller cntl) /*throws IOException, LineUnavailableException, UnsupportedAudioFileException*/ {
+        this.cntl = cntl;
         JFrame frame = new JFrame();
         welcomeBanner = new JLabel("Welcome to the Brant-Bargain Pet Store!!");
         welcomeBanner.setForeground(Color.yellow);
@@ -77,10 +79,10 @@ public class LoginGUI {
         frame.setVisible(true);
         
         //Adding some delightfully happy music to our login page <-- Love, Andrea
-        AudioInputStream audioIn = AudioSystem.getAudioInputStream(LoginGUI.class.getResource("creepy-background-daniel_simon.wav"));
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioIn);
-        clip.start();
+//        AudioInputStream audioIn = AudioSystem.getAudioInputStream(LoginGUI.class.getResource("creepy-background-daniel_simon.wav"));
+//        Clip clip = AudioSystem.getClip();
+//        clip.open(audioIn);
+//        clip.start();
     }
 
     public class LoginButtonListener implements ActionListener {
