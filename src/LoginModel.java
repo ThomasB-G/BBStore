@@ -20,5 +20,8 @@ public class LoginModel {
         this.loginInfo.put("richChump", "baconBitz");
     }
     
-    
+    public void loginButtonPressed()
+    {
+        
+    }
 }

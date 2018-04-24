@@ -12,8 +12,10 @@ public class Controller {
     MainGUI mainGUI;
     CartGUI cartGUI;
     LoginGUI loginGUI;
+    LoginModel loginModel;
 
     public Controller() {
+        loginModel = new LoginModel(this);
         mainGUI = new MainGUI(this);
        // cartGUI = new CartGUI();
         loginGUI = new LoginGUI(this);
@@ -22,7 +24,7 @@ public class Controller {
     
     public void loginButtonPressed()
     {
-        
+        this.loginModel.loginButtonPressed();
     }
     
 }
