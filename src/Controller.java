@@ -19,14 +19,15 @@ public class Controller {
         mainGUI = new MainGUI(this);
        // cartGUI = new CartGUI();
         loginGUI = new LoginGUI(this);
-        //loginGui.setVisible(true);
+        this.loginGUI.setVisible(true);
     }
     
     public void loginButtonPressed(String user, String password)
     {
         if(this.loginModel.authenticate(user, password))
         {
-            
+            this.loginGUI.dispose();
+            this.mainGUI.setVisible(true);
         }
         else
         {
