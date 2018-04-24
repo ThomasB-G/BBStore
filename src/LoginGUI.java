@@ -87,7 +87,7 @@ public class LoginGUI {
 
     public void loginButtonPressed()
     {
-        this.cntl.loginButtonPressed();
+        this.cntl.loginButtonPressed(this.jTxtUsername.getText(), this.jTxtPassword.getText());
     }
 
     public class CancelButtonListener implements ActionListener {

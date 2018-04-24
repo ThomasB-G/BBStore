@@ -22,7 +22,7 @@ public class Controller {
         //loginGui.setVisible(true);
     }
     
-    public void loginButtonPressed()
+    public void loginButtonPressed(String user, String password)
     {
         this.loginModel.loginButtonPressed();
     }
