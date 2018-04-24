@@ -45,11 +45,10 @@ public class LoginGUI extends JFrame {
         jTxtPassword = new JTextField(30);
         loginButton = new JButton("Login");
         loginButton.setBackground(Color.BLACK);
-        loginButton.setForeground(Color.WHITE);
         loginButton.addActionListener(event -> this.loginButtonPressed());
         cancelButton = new JButton("Cancel");
         cancelButton.setBackground(Color.BLACK);
-        cancelButton.setForeground(Color.WHITE);
+        
         cancelButton.addActionListener(new CancelButtonListener());
 
         //THESE COORDINATES TOOK ME FOREVER.
