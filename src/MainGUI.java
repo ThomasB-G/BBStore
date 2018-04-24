@@ -54,7 +54,7 @@ public class MainGUI extends JFrame{
         
         titlePanel = new JPanel(new GridLayout(1,3)); // rows, columns
         controlButtonPanel = new JPanel(new GridLayout(1,3));
-        JButton cartButton = new JButton(new ImageIcon("shoppingCartIcon.png"));
+        JButton cartButton = new JButton("Shopping Cart");
         cartButton.setToolTipText("Opens cart !"); // when the cart button is hovered over, "Opens cart !" messge pops up to user indicating what that button does
         //cartButton.addActionListener(event -> );   after ' -> ' you can add what you want that button to do
         
