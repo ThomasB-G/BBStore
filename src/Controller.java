@@ -9,5 +9,12 @@
  * @author russell
  */
 public class Controller {
+    MainGUI mainGUI;
+
+    public Controller() {
+        mainGUI = new MainGUI(this);
+        mainGUI.setVisible(true);
+    }
+    
     
 }
