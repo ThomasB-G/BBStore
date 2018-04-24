@@ -25,7 +25,6 @@ import javax.swing.JPanel;
 public class MainGUI extends JFrame{
     private Controller controller; // controller
     private JPanel titlePanel;  // panel
-    private JPanel controlButtonPanel; // button panel
     
     public MainGUI(Controller controller)
     {
@@ -52,11 +51,10 @@ public class MainGUI extends JFrame{
         that to the center.
         */
         
-        titlePanel = new JPanel(new GridLayout(1,3)); // rows, columns
-        controlButtonPanel = new JPanel(new GridLayout(1,3));
-        JButton cartButton = new JButton("Shopping Cart");
+        titlePanel = new JPanel(new GridLayout(1,2)); // rows, columns
+        JButton cartButton = new JButton("Cart");
         cartButton.setToolTipText("Opens cart !"); // when the cart button is hovered over, "Opens cart !" messge pops up to user indicating what that button does
-        //cartButton.addActionListener(event -> );   after ' -> ' you can add what you want that button to do
+        cartButton.addActionListener(event -> controller.cartButtonPressed()); 
         
         //HEADER OF MAIN GUI
         JLabel label = new JLabel("The Brant-Bargain Store"); // creates header for main view
@@ -65,10 +63,11 @@ public class MainGUI extends JFrame{
         //STORE IMAGE
         JLabel storeImage = new JLabel(new ImageIcon("B-BLogo.png"));//Store image, put image path in quotes
         
-        // ADDING TO TITLE PANEL
+        // ADDING TO PANELS
         titlePanel.add(storeImage);
         titlePanel.add(label);
         titlePanel.add(cartButton);
+        
        
         // ADDING TO MAIN GUI
         this.setTitle("Home Screen"); // title of MainGUI     "Home Screen" is a placeholder   'this' refers to MainGUI JFrame
