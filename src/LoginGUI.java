@@ -89,6 +89,11 @@ public class LoginGUI {
     {
         this.cntl.loginButtonPressed(this.jTxtUsername.getText(), this.jTxtPassword.getText());
     }
+    
+    public void failedAuthenticate()
+    {
+        System.out.println("Apologies you failed the authentication");
+    }
 
     public class CancelButtonListener implements ActionListener {
 

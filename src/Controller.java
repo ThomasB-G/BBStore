@@ -28,6 +28,10 @@ public class Controller {
         {
             
         }
+        else
+        {
+            this.loginGUI.failedAuthenticate();
+        }
     }
     
 }
