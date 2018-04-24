@@ -12,7 +12,7 @@ import java.util.HashMap;
  * @author russell
  */
 public class LoginModel {
-    private Controller cntl;
+    private final Controller cntl;
     private HashMap<String, String> loginInfo;
     LoginModel(Controller cntl)
     {
