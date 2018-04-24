@@ -20,8 +20,8 @@ public class LoginModel {
         this.loginInfo.put("richChump", "baconBitz");
     }
     
-    public void loginButtonPressed()
+    public boolean authenticate(String user, String password)
     {
-        
+        return loginInfo.containsKey(user) && loginInfo.get(user).equalsIgnoreCase(password);
     }
 }

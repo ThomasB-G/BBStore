@@ -24,7 +24,10 @@ public class Controller {
     
     public void loginButtonPressed(String user, String password)
     {
-        this.loginModel.loginButtonPressed();
+        if(this.loginModel.authenticate(user, password))
+        {
+            
+        }
     }
     
 }
