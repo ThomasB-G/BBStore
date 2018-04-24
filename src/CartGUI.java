@@ -16,64 +16,37 @@ import javax.swing.JOptionPane;
 
 public class CartGUI extends JFrame{
     private JTextField messageField;
-    private JButton submitMessageButton;
-    private JButton cancelMessageButton;
+    private JButton checkoutMessageButton;
+    private JButton returnMessageButton;
+    private JPanel cartPanel;
     
-    private CartGUI model;
+   
+    private Controller controller;
     
-    CartGUI(CartGUI model)
+    public CartGUI(Controller controller)
     {
-        this.model = model;
-        
+        this.controller = controller;
+        cartGUIComponents();
+    }        
+    
+    public void cartGUIComponents()
+    {
         messageField = new JTextField(100);
-        submitMessageButton = new JButton("Finish!");
-        cancelMessageButton = new JButton("Cancel");
+        checkoutMessageButton = new JButton("Czech Out");
+        returnMessageButton = new JButton("Return to Shopping");
         
-        JPanel content = new JPanel();
-        content.add(messageField);
-        content.add(submitMessageButton);
-        content.add(cancelMessageButton);
+        cartPanel = new JPanel(new GridLayout(1,3));
         
-        this.setContentPane(content);
-        this.pack();
+        cartPanel.add(messageField);
+        cartPanel.add(checkoutMessageButton);
+        cartPanel.add(returnMessageButton);
+        
+        
         this.setTitle("Cart Message Option");
+        this.setSize(500, 500);
+        this.setLocationRelativeTo(null);
+        this.setContentPane(new JPanel(new BorderLayout()));
+        this.getContentPane().add(cartPanel, BorderLayout.NORTH);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    
-    public String getMessageInput()
-    {
-        return messageField.getText();
-    }
-    
-    public void addMessageButtonListener(ActionListener al)
-    {
-        submitMessageButton.addActionListener(al);
-    }
-    
-    public void cancelMessageButtonListener(ActionListener al)
-    {
-        cancelMessageButton.addActionListener(al);
-    }
-    
-    
-    public static void cartMessage(String [] args)
-    {
-        int n = -1;
-        while (n < 0)
-                {
-                    String input = JOptionPane.showInputDialog("Would you like "
-                            + "to attach a message to your order?");
-                    if (input.length() > 0)
-                    {
-                        n++;
-                        System.out.println("Thank you! Your note has been"
-                                + " attached!");
-                    }
-                    else
-                    {
-                        System.out.println("Enter a message! (WIP)");
-                    }
-                }
-    }
-    
+    }    
 }
