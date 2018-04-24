@@ -35,4 +35,9 @@ public class Controller {
         }
     }
     
+    public void cartButtonPressed()
+    {
+        
+    }
+    
 }
