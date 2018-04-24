@@ -90,7 +90,7 @@ public class LoginGUI extends JFrame {
     
     public void failedAuthenticate()
     {
-        System.out.println("Apologies you failed the authentication");
+        System.out.println("YOU SHALL NOT PASS");
     }
 
     public class CancelButtonListener implements ActionListener {
