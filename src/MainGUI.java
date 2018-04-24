@@ -26,7 +26,6 @@ public class MainGUI extends JFrame{
     private Controller controller; // controller
     private JPanel titlePanel;  // panel
     private JPanel controlButtonPanel; // button panel
-    private JPanel cartButtonPanel; // button panel
     
     public MainGUI(Controller controller)
     {
@@ -55,38 +54,30 @@ public class MainGUI extends JFrame{
         
         titlePanel = new JPanel(new GridLayout(1,3)); // rows, columns
         controlButtonPanel = new JPanel(new GridLayout(1,3));
-        cartButtonPanel = new JPanel(new GridLayout(1,3));
-        JButton cartButton = new JButton("Cart");
+        JButton cartButton = new JButton(new ImageIcon("shoppingCartIcon.png"));
         cartButton.setToolTipText("Opens cart !"); // when the cart button is hovered over, "Opens cart !" messge pops up to user indicating what that button does
-        cartButton.setFont(new Font("Courier", Font.PLAIN, 18));
         //cartButton.addActionListener(event -> );   after ' -> ' you can add what you want that button to do
         
         //HEADER OF MAIN GUI
         JLabel label = new JLabel("The Brant-Bargain Store"); // creates header for main view
-        label.setFont(new Font("Courier", Font.BOLD, 16)); // sets the font of the header
+        label.setFont(new Font("Courier", Font.BOLD, 25)); // sets the font of the header
         
         //STORE IMAGE
-        JLabel storeImage = new JLabel(new ImageIcon("EX: somePicture.txt"));//Store image, put image path in quotes
+        JLabel storeImage = new JLabel(new ImageIcon("B-BLogo.png"));//Store image, put image path in quotes
         
         // ADDING TO TITLE PANEL
-        titlePanel.add(label);
         titlePanel.add(storeImage);
-        
-        // ADDING BUTTONS TO CONTROL_BUTTON_PANEL
-        //controlButtonPanel.add();   <- use this to add buttons to controlButtonPanel
-        
-        // ADDING BUTTONS TO CART_BUTTON_PANEL
-        cartButtonPanel.add(cartButton);
-        
+        titlePanel.add(label);
+        titlePanel.add(cartButton);
+       
         // ADDING TO MAIN GUI
         this.setTitle("Home Screen"); // title of MainGUI     "Home Screen" is a placeholder   'this' refers to MainGUI JFrame
-        this.setSize(800,600); //width,height of MainGUI frame,  size is placeholder
+        this.setSize(1100,800); //width,height of MainGUI frame,  size is placeholder
         this.setLocationRelativeTo(null); // centers the panel on the screen
         this.setContentPane(new JPanel (new BorderLayout())); // sets main pane to be a border layout
         
         // All code below adds components to MainGUI JFrame
         this.getContentPane().add(titlePanel, BorderLayout.NORTH); // title panel added to top of JFrame
-        this.getContentPane().add(cartButtonPanel, BorderLayout.EAST);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //when 'x' is clicked on window, program terminates
     }
 }
