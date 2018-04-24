@@ -12,7 +12,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-public class LoginGUI {
+public class LoginGUI extends JFrame {
 
     private String username = "richChump";
     private String password = "baconBitz";
@@ -28,12 +28,12 @@ public class LoginGUI {
 
     public LoginGUI(Controller cntl) /*throws IOException, LineUnavailableException, UnsupportedAudioFileException*/ {
         this.cntl = cntl;
-        JFrame frame = new JFrame();
+        
         welcomeBanner = new JLabel("Welcome to the Brant-Bargain Pet Store!!");
         welcomeBanner.setForeground(Color.yellow);
         welcomeBanner.setFont(new Font("Algerian", Font.ITALIC, 30));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel = (JPanel) frame.getContentPane();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel = (JPanel) this.getContentPane();
         panel.setLayout(null);
 
         panel.setBackground(Color.BLACK);
@@ -74,9 +74,8 @@ public class LoginGUI {
         panel.add(loginButton);
         panel.add(cancelButton);
 
-        frame.setTitle("BBStore: The Ultimate Undergraduate Tuition Payment System.");
-        frame.setSize(800, 500);
-        frame.setVisible(true);
+        this.setTitle("BBStore: The Ultimate Undergraduate Tuition Payment System.");
+        this.setSize(800, 500);
         
         //Adding some delightfully happy music to our login page <-- Love, Andrea
 //        AudioInputStream audioIn = AudioSystem.getAudioInputStream(LoginGUI.class.getResource("creepy-background-daniel_simon.wav"));
