@@ -17,7 +17,7 @@ public class Controller {
     public Controller() {
         loginModel = new LoginModel(this);
         mainGUI = new MainGUI(this);
-       // cartGUI = new CartGUI();
+        cartGUI = new CartGUI(this);
         loginGUI = new LoginGUI(this);
         this.loginGUI.setVisible(true);
     }
@@ -37,7 +37,8 @@ public class Controller {
     
     public void cartButtonPressed()
     {
-        
+        this.mainGUI.setVisible(false);
+        this.cartGUI.setVisible(true);
     }
     
 }
