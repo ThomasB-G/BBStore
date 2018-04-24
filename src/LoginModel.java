@@ -17,6 +17,7 @@ public class LoginModel {
     LoginModel(Controller cntl)
     {
         this.cntl = cntl;
+        this.loginInfo = new HashMap<>();
         this.loginInfo.put("richChump", "baconBitz");
     }
     
