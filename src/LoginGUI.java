@@ -62,6 +62,7 @@ public class LoginGUI extends JFrame {
         jTxtPassword.setBounds(480, 138, 130, 25);
         loginButton.setBounds(178, 178, 130, 25);
         cancelButton.setBounds(480, 178, 130, 25);
+        
         JLabel bbLogo = new JLabel();
         bbLogo.setIcon(new ImageIcon("src/B-BLogo.png"));
         bbLogo.setBounds(245, 175, 250, 280);
