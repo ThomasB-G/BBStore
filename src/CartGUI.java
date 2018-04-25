@@ -18,9 +18,15 @@ public class CartGUI extends JFrame{
     private JTextField messageField;
     private JButton checkoutMessageButton;
     private JButton returnMessageButton;
-    private JPanel cartPanel;
+    private JPanel cartButtonPanel;
+    private JPanel cartInfoPanel;
+    private JPanel cartContentPanel;
+    private JPanel cartTotalPanel;
     private JLabel label1;
     private JLabel label2;
+    private JLabel totalLabel;
+    
+    private JLabel example;
     
    
     private Controller controller;
@@ -33,8 +39,11 @@ public class CartGUI extends JFrame{
     
     public void cartGUIComponents()
     {
-        label1 = new JLabel("Item(s)");
-        label2 = new JLabel("Price");
+        label1 = new JLabel("Item(s)", SwingConstants.CENTER);
+        label2 = new JLabel("Price", SwingConstants.CENTER);
+        totalLabel = new JLabel("Total:", SwingConstants.CENTER);
+        
+        example = new JLabel("placeholder", SwingConstants.CENTER);
         
         returnMessageButton = new JButton("Return to Shopping");
         //return shopping button^
@@ -43,12 +52,20 @@ public class CartGUI extends JFrame{
         //want to make this when pressed pop up a JOptionpane to say:
         //"Thanks for the monies! Your new animal will NEVER arrive! :D"
         
-        cartPanel = new JPanel(new GridLayout(0,2));
+        cartButtonPanel = new JPanel(new GridLayout(1,2));
+        cartInfoPanel = new JPanel(new GridLayout(1,2));
+        cartContentPanel = new JPanel(new GridLayout(0,2));
+        cartTotalPanel = new JPanel(new GridLayout(1,2));
         
-        cartPanel.add(label1);
-        cartPanel.add(label2);
-        cartPanel.add(returnMessageButton);
-        cartPanel.add(checkoutMessageButton);
+        cartInfoPanel.add(label1);
+        cartInfoPanel.add(label2);
+        
+        cartContentPanel.add(example);
+        
+        cartTotalPanel.add(totalLabel);
+        
+        cartButtonPanel.add(returnMessageButton);
+        cartButtonPanel.add(checkoutMessageButton);
         
         
         
@@ -56,7 +73,10 @@ public class CartGUI extends JFrame{
         this.setSize(500, 500);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
-        this.getContentPane().add(cartPanel, BorderLayout.SOUTH);
+        this.getContentPane().add(cartInfoPanel, BorderLayout.NORTH);
+        this.getContentPane().add(cartContentPanel, BorderLayout.CENTER);
+        this.getContentPane().add(cartTotalPanel, BorderLayout.CENTER);
+        this.getContentPane().add(cartButtonPanel, BorderLayout.SOUTH);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }    
 }
