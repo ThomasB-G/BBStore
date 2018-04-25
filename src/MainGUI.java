@@ -32,7 +32,8 @@ public class MainGUI extends JFrame {
         label.setFont(new Font("Courier", Font.BOLD, 25)); // sets the font of the header
         
         titlePanel = new JPanel(new GridLayout(1, 2)); // rows, columns
-        JButton cartButton = new JButton("Cart");
+        Icon cartIcon = new ImageIcon(getClass().getResource("shoppingCartIconSmall.png"));
+        JButton cartButton = new JButton(cartIcon);
         cartButton.setToolTipText("Opens cart !"); // when the cart button is hovered over, "Opens cart !" messge pops up to user indicating what that button does
         cartButton.addActionListener(event -> controller.cartButtonPressed());
 
