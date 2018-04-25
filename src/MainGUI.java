@@ -28,7 +28,7 @@ public class MainGUI extends JFrame {
     private Controller controller; // controller
     private JPanel titlePanel;  // panel
     private JPanel animalPanel; //Panel to hold AMINALS
-    
+
     public MainGUI(Controller controller) {
         this.controller = controller;
         mainGUIComponents();
@@ -75,24 +75,30 @@ public class MainGUI extends JFrame {
         this.setLocationRelativeTo(null); // centers the panel on the screen
         this.setContentPane(new JPanel(new BorderLayout())); // sets main pane to be a border layout
 
-        
         animalPanel = new JPanel(new GridLayout(1, 2));
         //Andrea's desperate attempt to keep adding value to this project :-(
         //Adding Clickable images of the Animals
         Icon lionCat = new ImageIcon(getClass().getResource("SuperSaiyanLionCat.png"));
         JButton lionCatButton = new JButton(lionCat);
         animalPanel.add(lionCatButton);
-        
+
         Icon godzillaDragon = new ImageIcon(getClass().getResource("godzillaDragon.png"));
         JButton dragonButton = new JButton(godzillaDragon);
         animalPanel.add(dragonButton);
-        
+
+        Icon bird = new ImageIcon(getClass().getResource("ThisisdefinitelyabirdNOTabat.png"));
+        JButton birdButton = new JButton(bird);
+        animalPanel.add(birdButton);
+//
+//        Icon lionCat = new ImageIcon(getClass().getResource("SuperSaiyanLionCat.png"));
+//        JButton lionCatButton = new JButton(lionCat);
+//        animalPanel.add(lionCatButton);
+
         this.getContentPane().add(animalPanel, BorderLayout.SOUTH);
 
-        
         // All code below adds components to MainGUI JFrame
         this.getContentPane().add(titlePanel, BorderLayout.NORTH); // title panel added to top of JFrame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //when 'x' is clicked on window, program terminates
-        
+
     }
 }
