@@ -14,6 +14,7 @@ import java.util.HashMap;
 public class LoginModel {
     private final Controller cntl;
     private HashMap<String, String> loginInfo;
+    
     LoginModel(Controller cntl)
     {
         this.cntl = cntl;
