@@ -19,6 +19,8 @@ public class CartGUI extends JFrame{
     private JButton checkoutMessageButton;
     private JButton returnMessageButton;
     private JPanel cartPanel;
+    private JLabel label1;
+    private JLabel label2;
     
    
     private Controller controller;
@@ -31,22 +33,30 @@ public class CartGUI extends JFrame{
     
     public void cartGUIComponents()
     {
-        messageField = new JTextField(100);
-        checkoutMessageButton = new JButton("Czech Out");
+        label1 = new JLabel("Item(s)");
+        label2 = new JLabel("Price");
+        
         returnMessageButton = new JButton("Return to Shopping");
+        //return shopping button^
         
-        cartPanel = new JPanel(new GridLayout(1,3));
+        checkoutMessageButton = new JButton("Czech Out");
+        //want to make this when pressed pop up a JOptionpane to say:
+        //"Thanks for the monies! Your new animal will NEVER arrive! :D"
         
-        cartPanel.add(messageField);
-        cartPanel.add(checkoutMessageButton);
+        cartPanel = new JPanel(new GridLayout(0,2));
+        
+        cartPanel.add(label1);
+        cartPanel.add(label2);
         cartPanel.add(returnMessageButton);
+        cartPanel.add(checkoutMessageButton);
         
         
-        this.setTitle("Cart Message Option");
+        
+        this.setTitle("Your shopping cart");
         this.setSize(500, 500);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
-        this.getContentPane().add(cartPanel, BorderLayout.NORTH);
+        this.getContentPane().add(cartPanel, BorderLayout.SOUTH);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }    
 }
