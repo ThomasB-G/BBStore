@@ -28,8 +28,9 @@ public class CartGUI extends JFrame{
     private JLabel totalLabel;//page end labeling total price
     private JTextField totalPrice;//page end displaying total price
     
-    private JLabel animalnamehere; //cartContentPanel
-    private JLabel animalpricehere; //cartContentPanel
+    private JTextArea addedAnimals;
+    private JTextArea addedPrices;
+    
     
    
     private Controller controller;
@@ -55,8 +56,6 @@ public class CartGUI extends JFrame{
         
         totalPrice.setHorizontalAlignment(SwingConstants.CENTER);
         totalPrice.setEditable(false);
-        animalnamehere = new JLabel("animal name placeholder", SwingConstants.CENTER);//testing use
-        animalpricehere = new JLabel("price placeholder", SwingConstants.CENTER);//testing use
         
         returnMessageButton = new JButton("Return to Shopping");
         returnMessageButton.addActionListener(event -> controller.mainGUI.setVisible(true));
@@ -69,7 +68,7 @@ public class CartGUI extends JFrame{
         
         cartButtonPanel = new JPanel(new GridLayout(2,2));
         cartInfoPanel = new JPanel(new GridLayout(1,2));
-        cartContentPanel = new JPanel(new GridLayout(0,2));
+        cartContentPanel = new JPanel(new GridLayout(1,2));
         cartTotalPanel = new JPanel(new GridLayout(1,2));
         
         
@@ -78,11 +77,13 @@ public class CartGUI extends JFrame{
         cartInfoPanel.add(label2);
         
         
-        //cart content panel - should basically be centered between
-        //top panel(info) and bottom panel(buttons)
-        cartContentPanel.add(animalnamehere);
-        cartContentPanel.add(animalpricehere);
-        
+        addedAnimals = new JTextArea(10, 30);
+        addedAnimals.setEditable(false);
+        addedPrices = new JTextArea(10, 30);
+        addedPrices.setText("Test price");
+        addedPrices.setEditable(false);
+        cartContentPanel.add(addedAnimals);
+        cartContentPanel.add(addedPrices);
         
         //cart total panel - should be at the bottom but right above buttons
         //cartTotalPanel.add(totalLabel);
@@ -102,8 +103,11 @@ public class CartGUI extends JFrame{
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(cartInfoPanel, BorderLayout.PAGE_START);
         this.getContentPane().add(cartContentPanel, BorderLayout.CENTER);
-        //this.getContentPane().add(cartTotalPanel, BorderLayout.CENTER);
         this.getContentPane().add(cartButtonPanel, BorderLayout.PAGE_END);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }    
+    }  
+    public void addAnimalName(String name)
+    {
+        addedAnimals.append(name + "\n");
+    }
 }

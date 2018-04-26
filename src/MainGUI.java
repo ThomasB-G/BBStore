@@ -26,6 +26,7 @@ public class MainGUI extends JFrame {
     private JPanel animalPanel4;
     private JPanel animalPanel5;
     private JPanel animalPanel6;
+    private String name;
 
     public MainGUI(Controller controller) {
         this.controller = controller;
@@ -64,6 +65,8 @@ public class MainGUI extends JFrame {
         price1.setText("15");
         price1.setEditable(false);
         JButton lionCatButton = new JButton(lionCat);
+        String animalName1 = "\tRandy";
+        lionCatButton.addActionListener(event -> controller.cartGUI.addAnimalName(animalName1));
         animalPanel1.add(lionCatButton);
         animalPanel1.add(name1);
         animalPanel1.add(price1);
@@ -76,6 +79,8 @@ public class MainGUI extends JFrame {
         price2.setText("35");
         price2.setEditable(false);
         JButton dragonButton = new JButton(godzillaDragon);
+        String animalName2 = "\tOscar";
+        dragonButton.addActionListener(event -> controller.cartGUI.addAnimalName(animalName2));
         animalPanel2.add(dragonButton);
         animalPanel2.add(name2);
         animalPanel2.add(price2);
@@ -88,6 +93,8 @@ public class MainGUI extends JFrame {
         price3.setText("110");
         price3.setEditable(false);
         JButton birdButton = new JButton(bird);
+        String animalName3 = "\tBatman";
+        birdButton.addActionListener(event -> controller.cartGUI.addAnimalName(animalName3));
         animalPanel3.add(birdButton);
         animalPanel3.add(name3);
         animalPanel3.add(price3);
@@ -100,6 +107,8 @@ public class MainGUI extends JFrame {
         price4.setText("200");
         price4.setEditable(false);
         JButton unicornButton = new JButton(unicorns);
+        String animalName4 = "\tUnicorn";
+        unicornButton.addActionListener(event -> controller.cartGUI.addAnimalName(animalName4));
         animalPanel4.add(unicornButton);
         animalPanel4.add(name4);
         animalPanel4.add(price4);
@@ -112,6 +121,8 @@ public class MainGUI extends JFrame {
         price5.setText("22");
         price5.setEditable(false);
         JButton dogButton = new JButton(dog);
+        String animalName5 = "\tDoggo";
+        dogButton.addActionListener(event -> controller.cartGUI.addAnimalName(animalName5));
         animalPanel5.add(dogButton);
         animalPanel5.add(name5);
         animalPanel5.add(price5);
@@ -124,6 +135,8 @@ public class MainGUI extends JFrame {
         price6.setText("1000000");
         price6.setEditable(false);
         JButton russellButton = new JButton(russell);
+        String animalName6 = "\tRussell";
+        russellButton.addActionListener(event -> controller.cartGUI.addAnimalName(animalName6));
         animalPanel6.add(russellButton);
         animalPanel6.add(name6);
         animalPanel6.add(price6);
@@ -145,4 +158,5 @@ public class MainGUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //when 'x' is clicked on window, program terminates
 
     }
+    
 }
