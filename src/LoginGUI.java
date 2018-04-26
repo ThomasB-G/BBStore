@@ -78,6 +78,7 @@ public class LoginGUI extends JFrame {
 
         this.setTitle("BBStore: The Ultimate Undergraduate Tuition Payment System.");
         this.setSize(800, 500);
+        this.setLocationRelativeTo(null);
         
         //Adding some delightfully happy music to our login page <-- Love, Andrea
         AudioInputStream audioIn = null;
