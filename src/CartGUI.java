@@ -60,11 +60,13 @@ public class CartGUI extends JFrame{
         animalpricehere = new JLabel("price placeholder", SwingConstants.CENTER);//testing use
         
         returnMessageButton = new JButton("Return to Shopping");
-        //return shopping button^
+        returnMessageButton.addActionListener(event -> controller.mainGUI.setVisible(true));
+        returnMessageButton.addActionListener(event -> controller.cartGUI.setVisible(false));
         
         checkoutMessageButton = new JButton("Check Out");
-        //want to make this when pressed pop up a JOptionpane to say:
-        //"Thanks for the monies! Your new animal will NEVER arrive! :D"
+        checkoutMessageButton.addActionListener(event -> JOptionPane.showMessageDialog(new JFrame(), "Thanks for the monies! "
+                + "Your new animal will NEVER arrive! :D"));
+        
         
         cartButtonPanel = new JPanel(new GridLayout(2,2));
         cartInfoPanel = new JPanel(new GridLayout(1,2));
