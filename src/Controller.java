@@ -51,4 +51,9 @@ public class Controller {
         this.mainGUI.setVisible(true);
     }
     
+    public void addToCart(Animal a)
+    {
+        this.cartModel.addToCart(a);
+    }
+    
 }
