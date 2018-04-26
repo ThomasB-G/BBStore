@@ -96,11 +96,16 @@ public class CartGUI extends JFrame{
         this.setSize(500, 500);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
-        this.getContentPane().add(cartInfoPanel, BorderLayout.PAGE_START);
+        //this.getContentPane().add(cartInfoPanel, BorderLayout.PAGE_START);
         this.getContentPane().add(tablePane, BorderLayout.CENTER);
         this.getContentPane().add(cartButtonPanel, BorderLayout.PAGE_END);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }        
+    }
+    
+    public void putTotal(double total)
+    {
+        this.totalPrice.setText("" + total);
+    }
  
     
     

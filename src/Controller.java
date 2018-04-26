@@ -50,6 +50,7 @@ public class Controller {
         
         this.mainGUI.setVisible(false);
         this.cartGUI.setVisible(true);
+        this.cartGUI.putTotal(this.cartModel.totalCost());
         this.cartGUI.repaint();
     }
     
