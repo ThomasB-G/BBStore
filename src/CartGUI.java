@@ -49,7 +49,7 @@ public class CartGUI extends JFrame{
         label2 = new JLabel("Price", SwingConstants.CENTER);
         
         //label for the bottom panel
-        totalLabel = new JLabel("Total:", SwingConstants.CENTER);
+        totalLabel = new JLabel("Total Price in BitCoin:", SwingConstants.CENTER);
         
         //***************************************************
         totalPrice = new JTextField("");
@@ -104,7 +104,7 @@ public class CartGUI extends JFrame{
     
     public void putTotal(double total)
     {
-        this.totalPrice.setText("" + total);
+        this.totalPrice.setText("$ " + total);
     }
  
     
