@@ -21,9 +21,6 @@ public class Cart extends AbstractTableModel {
     {
         this.cntl = cntl;
         cart = new LinkedList<>();
-        cart.add(new Dog(10.0, "doggie", 5, 20.0, 10.0, 00));
-        cart.add(new Cat(10.0, "fdsae", 5, 20.0, 10.0, 00));
-        cart.add(new Dragon(10.0, "sdfadaffsdaie", 5, 20.0, 10.0, 00));
     }
     
     public void addToCart(Animal a)
