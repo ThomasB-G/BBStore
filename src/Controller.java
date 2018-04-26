@@ -1,7 +1,4 @@
 
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
