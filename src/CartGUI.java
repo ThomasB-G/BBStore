@@ -50,7 +50,7 @@ public class CartGUI extends JFrame{
         totalLabel = new JLabel("Total:", SwingConstants.CENTER);
         
         //***************************************************
-        totalPrice = new JTextField("$" + " your data here");//area for sum of prices to be placed
+        totalPrice = new JTextField("");
         //***************************************************
         
         totalPrice.setHorizontalAlignment(SwingConstants.CENTER);
