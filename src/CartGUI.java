@@ -58,8 +58,7 @@ public class CartGUI extends JFrame{
         totalPrice.setEditable(false);
         
         returnMessageButton = new JButton("Return to Shopping");
-        returnMessageButton.addActionListener(event -> controller.mainGUI.setVisible(true));
-        returnMessageButton.addActionListener(event -> controller.cartGUI.setVisible(false));
+        returnMessageButton.addActionListener(event -> controller.backToMain());
         
         checkoutMessageButton = new JButton("Check Out");
         checkoutMessageButton.addActionListener(event -> JOptionPane.showMessageDialog(new JFrame(), "Thanks for the monies! "

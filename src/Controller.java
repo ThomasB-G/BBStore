@@ -41,4 +41,10 @@ public class Controller {
         this.cartGUI.setVisible(true);
     }
     
+    public void backToMain()
+    {
+        this.cartGUI.setVisible(false);
+        this.mainGUI.setVisible(true);
+    }
+    
 }
