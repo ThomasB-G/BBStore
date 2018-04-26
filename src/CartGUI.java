@@ -39,7 +39,7 @@ public class CartGUI extends JFrame{
         returnMessageButton = new JButton("Return to Shopping");
         //return shopping button^
         
-        checkoutMessageButton = new JButton("Czech Out");
+        checkoutMessageButton = new JButton("Check Out");
         //want to make this when pressed pop up a JOptionpane to say:
         //"Thanks for the monies! Your new animal will NEVER arrive! :D"
         
