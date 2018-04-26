@@ -9,8 +9,6 @@
  * @author russell
  */
 
-import java.util.*;
-
 public class CurrencyConverter {
     
     private EarthCoins earthCoins;
