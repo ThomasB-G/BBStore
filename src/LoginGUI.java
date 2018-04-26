@@ -25,7 +25,7 @@ public class LoginGUI extends JFrame {
     private JLabel welcomeBanner;
     private Controller cntl;
 
-    public LoginGUI(Controller cntl) /*throws IOException, LineUnavailableException, UnsupportedAudioFileException*/ {
+    public LoginGUI(Controller cntl) {
         this.cntl = cntl;
         
         welcomeBanner = new JLabel("Welcome to the Brant-Bargain Pet Store!!");
