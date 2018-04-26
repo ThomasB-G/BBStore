@@ -38,11 +38,10 @@ public class CartGUI extends JFrame{
     public CartGUI(Controller controller)
     {
         this.controller = controller;
-        cartGUIComponents();
-    }        
-    
-    public void cartGUIComponents()
-    {
+        this.table = new JTable(controller.getModel());
+        this.table.getColumnModel().getColumn(0).setHeaderValue("Name");
+        this.table.getColumnModel().getColumn(1).setHeaderValue("Price");
+        this.table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
         
         //top panel/page start
@@ -77,11 +76,10 @@ public class CartGUI extends JFrame{
         cartInfoPanel.add(label1);
         cartInfoPanel.add(label2);
         
+        JScrollPane tablePane = new JScrollPane(table);
+        tablePane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         
-        this.table = new JTable(controller.getModel());
-        this.table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        cartContentPanel.add(this.table);
-        
+        table.setFillsViewportHeight(true);
         //cart total panel - should be at the bottom but right above buttons
         //cartTotalPanel.add(totalLabel);
         
@@ -99,10 +97,11 @@ public class CartGUI extends JFrame{
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(cartInfoPanel, BorderLayout.PAGE_START);
-        this.getContentPane().add(cartContentPanel, BorderLayout.CENTER);
+        this.getContentPane().add(tablePane, BorderLayout.CENTER);
         this.getContentPane().add(cartButtonPanel, BorderLayout.PAGE_END);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }  
+    }        
+ 
     
     
 }

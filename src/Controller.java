@@ -1,4 +1,5 @@
 
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
 /*
@@ -21,11 +22,13 @@ public class Controller {
 
     public Controller() {
         loginModel = new LoginModel(this);
+        
+        cartModel = new Cart(this);
+        stockModel = new Stock(this);
+        System.out.println(cartModel.getColumnCount());
         mainGUI = new MainGUI(this);
         cartGUI = new CartGUI(this);
         loginGUI = new LoginGUI(this);
-        cartModel = new Cart(this);
-        stockModel = new Stock(this);
         this.loginGUI.setVisible(true);
     }
     
@@ -44,8 +47,10 @@ public class Controller {
     
     public void cartButtonPressed()
     {
+        
         this.mainGUI.setVisible(false);
         this.cartGUI.setVisible(true);
+        this.cartGUI.repaint();
     }
     
     public void backToMain()
@@ -59,7 +64,7 @@ public class Controller {
         this.cartModel.addToCart(a);
     }
     
-    public TableModel getModel()
+    public Cart getModel()
     {
         return this.cartModel;
     }

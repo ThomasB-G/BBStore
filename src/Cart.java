@@ -10,9 +10,10 @@
  */
 import java.util.*;
 import javax.swing.event.TableModelListener;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
-public class Cart implements TableModel {
+public class Cart extends AbstractTableModel {
     private LinkedList<Animal> cart;
     private Controller cntl;
     
@@ -20,6 +21,9 @@ public class Cart implements TableModel {
     {
         this.cntl = cntl;
         cart = new LinkedList<>();
+        cart.add(new Dog(10.0, "doggie", 5, 20.0, 10.0, 00));
+        cart.add(new Cat(10.0, "fdsae", 5, 20.0, 10.0, 00));
+        cart.add(new Dragon(10.0, "sdfadaffsdaie", 5, 20.0, 10.0, 00));
     }
     
     public void addToCart(Animal a)
@@ -38,64 +42,28 @@ public class Cart implements TableModel {
         return cart.stream().map((a) -> a.getCost()).reduce(0.0, (a, b) -> a + b);
     }
 
-    @Override
+     @Override
     public int getRowCount() {
-        return 2;
+        return this.cart.size();
     }
 
     @Override
     public int getColumnCount() {
-        return cart.size();
-    }
-
-    @Override
-    public String getColumnName(int columnIndex) {
-        switch(columnIndex)
-        {
-            case 0:
-                return "Name";
-            case 1:
-                return "Price";
-        }
-        
-        return "Unused Column";
-    }
-
-    @Override
-    public Class<?> getColumnClass(int columnIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean isCellEditable(int rowIndex, int columnIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 2;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        switch(columnIndex)
-        {
+        switch (columnIndex) {
             case 0:
                 return (Object) cart.get(rowIndex).getName();
             case 1:
-                return (Object) ("$" + cart.get(rowIndex).getCost());
+                return (Object) cart.get(rowIndex).getCost();
+            default:
+                return null;
         }
-        
-        return "unused";
+
     }
 
-    @Override
-    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public void addTableModelListener(TableModelListener l) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void removeTableModelListener(TableModelListener l) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
