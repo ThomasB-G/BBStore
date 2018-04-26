@@ -11,7 +11,6 @@
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;
 import javax.swing.JOptionPane;
 
 public class CartGUI extends JFrame{
