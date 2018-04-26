@@ -9,16 +9,20 @@
  * @author russell
  */
 public class Controller {
-    MainGUI mainGUI;
-    CartGUI cartGUI;
-    LoginGUI loginGUI;
-    LoginModel loginModel;
+    private MainGUI mainGUI;
+    private CartGUI cartGUI;
+    private LoginGUI loginGUI;
+    private LoginModel loginModel;
+    private Cart cartModel;
+    private Stock stockModel;
 
     public Controller() {
         loginModel = new LoginModel(this);
         mainGUI = new MainGUI(this);
         cartGUI = new CartGUI(this);
         loginGUI = new LoginGUI(this);
+        cartModel = new Cart(this);
+        stockModel = new Stock(this);
         this.loginGUI.setVisible(true);
     }
     

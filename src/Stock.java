@@ -13,9 +13,11 @@ import java.util.function.Predicate;
 
 public class Stock {
     private LinkedList<Animal> stock;
+    private Controller cntl;
     
-    Stock()
+    Stock(Controller cntl)
     {
+        this.cntl = cntl;
         stock = new LinkedList<>();
     }
     

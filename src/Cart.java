@@ -12,9 +12,11 @@ import java.util.*;
 
 public class Cart {
     private LinkedList<Animal> cart;
+    private Controller cntl;
     
-    Cart()
+    Cart(Controller cntl)
     {
+        this.cntl = cntl;
         cart = new LinkedList<>();
     }
     
