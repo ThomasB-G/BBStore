@@ -9,9 +9,7 @@
  * @author russell
  */
 import java.util.*;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
 
 public class Cart extends AbstractTableModel {
     private LinkedList<Animal> cart;
