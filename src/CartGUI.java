@@ -28,8 +28,8 @@ public class CartGUI extends JFrame{
     private JLabel totalLabel;//page end labeling total price
     private JTextField totalPrice;//page end displaying total price
     
-    private JTextArea addedAnimals;
-    private JTextArea addedPrices;
+    
+    private JTable table;
     
     
    
@@ -43,6 +43,8 @@ public class CartGUI extends JFrame{
     
     public void cartGUIComponents()
     {
+        
+        
         //top panel/page start
         label1 = new JLabel("Item(s)", SwingConstants.CENTER);
         label2 = new JLabel("Price", SwingConstants.CENTER);
@@ -76,13 +78,9 @@ public class CartGUI extends JFrame{
         cartInfoPanel.add(label2);
         
         
-        addedAnimals = new JTextArea(10, 30);
-        addedAnimals.setEditable(false);
-        addedPrices = new JTextArea(10, 30);
-        addedPrices.setText("Test price");
-        addedPrices.setEditable(false);
-        cartContentPanel.add(addedAnimals);
-        cartContentPanel.add(addedPrices);
+        this.table = new JTable(controller.getModel());
+        this.table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        cartContentPanel.add(this.table);
         
         //cart total panel - should be at the bottom but right above buttons
         //cartTotalPanel.add(totalLabel);
@@ -105,8 +103,6 @@ public class CartGUI extends JFrame{
         this.getContentPane().add(cartButtonPanel, BorderLayout.PAGE_END);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }  
-    public void addAnimalName(String name)
-    {
-        addedAnimals.append(name + "\n");
-    }
+    
+    
 }
